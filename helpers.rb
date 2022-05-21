@@ -3,5 +3,8 @@ def load_data_to_array(day_number:, is_test: false)
     file.readlines.map(&:chomp)
 end
 
-@test_data = load_data_to_array(day_number: @day_number, is_test: true)
 @data = load_data_to_array(day_number: @day_number)
+
+ARGV.each do|a|
+    @data = load_data_to_array(day_number: @day_number, is_test: true) if a == "--test"
+end

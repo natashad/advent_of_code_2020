@@ -1,11 +1,7 @@
 @day_number = 2
 require_relative '../helpers.rb'
 
-def run_test
-    run(data: @test_data)
-end
-
-def run(data: @data)
+def run(data)
     parsed_data = data.map{|line| parse_line(line)}
 
     first_valid_password_count, second_valid_password_count = [0, 0]
@@ -47,4 +43,4 @@ def parse_line(line)
     }
 end
 
-puts run
+puts run(@data)
